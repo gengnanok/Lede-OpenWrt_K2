@@ -38,7 +38,7 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/gengnanok/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: diy.config
@@ -102,7 +102,7 @@ jobs:
     
     - name: SSH远程连接服务器配置固件
       uses: P3TERX/debugger-action@main
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+      if: env.SSH_ACTIONS == 'false' || contains(github.event.action, 'ssh')
 
     - name: 下载软件包
       id: package
